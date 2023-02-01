@@ -683,7 +683,7 @@ public class TflitePlugin implements MethodCallHandler {
       for (int i = 0; i < numDetections[0]; ++i) {
         if (outputScores[0][i] < threshold) continue;
 
-        String detectedClass = labels.get((int) outputClasses[0][i] + 1);
+        String detectedClass = labels.get((int) outputClasses[0][i]);
 
         if (counters.get(detectedClass) == null) {
           counters.put(detectedClass, 1);
